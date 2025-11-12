@@ -1,17 +1,231 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEKA TEKNİK</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEKA TEKNİK | Isıtma ve Soğutma Sistemleri</title>
+  <meta name="description" content="SEKA TEKNİK — İzmir genelinde beyaz eşya, klima, kombi ve TV için profesyonel servis. Arçelik, Beko, Bosch, Siemens, Vestel, LG, Samsung markalarında uzman teknik ekip." />
+
   <style>
-    body { font-family: Arial; text-align: center; padding: 50px; background: #f0f0f0; }
-    h1 { color: #0a64a0; }
+    :root{
+      --brand:#0a64a0;
+      --accent:#ff9f1c;
+      --ink:#0b0b0c;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#f8fafc;
+      --ring:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{
+      border-bottom:1px solid var(--ring);
+      background:#fff;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .hero{
+      display:flex;flex-direction:column;gap:6px;align-items:flex-start; padding:32px 0;
+    }
+    .brand{font-size:32px;font-weight:800;letter-spacing:0.5px;color:var(--brand)}
+    .tagline{font-size:18px;color:var(--muted)}
+    .callout{
+      margin-top:12px;font-size:14px;color:#0b0b0c; background:#eef6fc;border:1px solid #d7eaf9;border-radius:12px;padding:10px 14px;
+    }
+
+    /* grid */
+    .grid{
+      display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:16px;margin-top:20px
+    }
+    @media (min-width:720px){
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (min-width:980px){
+      .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
+
+    /* card */
+    .card{
+      background:var(--card);
+      border:1px solid var(--ring);
+      border-radius:14px;
+      padding:18px;
+      display:flex;flex-direction:column;gap:12px;height:100%;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.07)}
+    .logo{height:42px;object-fit:contain}
+    .device{width:100%;height:160px;object-fit:cover;border-radius:10px;border:1px solid var(--ring);background:#fff}
+    .card h3{margin:4px 0 0 0;font-size:18px}
+    .card p{margin:0;color:#374151;font-size:14px;line-height:1.55}
+
+    /* kombi bölüm */
+    .section-title{font-size:22px;margin:36px 0 12px 0;color:var(--brand);font-weight:800}
+    .note{font-size:13px;color:var(--muted)}
+
+    /* iletişim */
+    .contact{
+      margin-top:28px; background:#fff; border:1px solid var(--ring); border-radius:14px; padding:18px;
+      display:grid; gap:10px
+    }
+    .contact strong{color:#111827}
+    .contact-row{display:flex;flex-wrap:wrap;gap:14px;font-size:15px}
+    .contact a.btn{display:inline-block;border:1px solid var(--brand);padding:8px 12px;border-radius:10px;font-weight:600}
+    .contact a.btn:hover{background:#f0f9ff}
+
+    /* harita */
+    .map-wrap{margin-top:14px;border:1px solid var(--ring);border-radius:14px;overflow:hidden}
+    .map{width:100%;height:340px;border:0}
+
+    footer{
+      margin-top:28px;border-top:1px solid var(--ring);background:#fff
+    }
+    footer .inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px 0;color:#6b7280;font-size:14px}
+
+    /* WhatsApp sabit buton */
+    .wa-fab{
+      position:fixed; right:18px; bottom:18px; z-index:50;
+      background:#25D366; color:#fff; border-radius:999px; padding:12px 16px;
+      display:flex; align-items:center; gap:8px; font-weight:700; box-shadow:0 8px 28px rgba(37,211,102,.35);
+      border:none; cursor:pointer;
+    }
+    .wa-fab:hover{filter:brightness(0.95)}
+    .wa-icon{width:20px;height:20px;display:inline-block}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
-  <h1>SEKA TEKNİK</h1>
-  <p>Beyaz Eşya • Klima • Kombi • TV Servisi</p>
-  <p>İletişim: 0553 690 46 99 - 0545 287 46 99</p>
+
+  <header>
+    <div class="container hero">
+      <div class="brand">SEKA TEKNİK</div>
+      <div class="tagline">Isıtma ve Soğutma Sistemleri — İzmir Geneli Servis</div>
+      <div class="callout">Arçelik • Beko • Bosch • Siemens • Vestel • LG • Samsung — Beyaz Eşya, Klima, Kombi ve TV’de uzman teknik servis</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- MARKALAR -->
+    <h2 class="section-title">Hizmet Verdiğimiz Markalar</h2>
+    <div class="grid">
+
+      <!-- Arçelik -->
+      <article class="card" aria-label="Arçelik Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Arcelik_logo.svg" alt="Arçelik Logo">
+        <!-- İstersen marka cihaz görseli ekle: <img class="device" src="..."> -->
+        <h3>Arçelik Servisi</h3>
+        <p>Arçelik buzdolabı, çamaşır/bulaşık makinesi ve fırınlarda arıza tespiti, elektronik kart onarımı, motor & rezistans değişimi. Orijinal yedek parça ve garantili işçilik.</p>
+      </article>
+
+      <!-- Beko -->
+      <article class="card" aria-label="Beko Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Beko_logo.svg" alt="Beko Logo">
+        <h3>Beko Servisi</h3>
+        <p>Su almama, su kaçırma, ısıtmama, tambur gürültüsü, pompa ve sensör arızalarında hızlı çözüm. Bakım ile enerji verimliliğini artırıyoruz.</p>
+      </article>
+
+      <!-- Bosch -->
+      <article class="card" aria-label="Bosch Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/87/Bosch-logo.svg" alt="Bosch Logo">
+        <h3>Bosch Servisi</h3>
+        <p>Bosch çamaşır ve bulaşık makinelerinde kart tamiri, motor ve rulman değişimi; buzdolabında soğutmama sorununa profesyonel müdahale.</p>
+      </article>
+
+      <!-- Siemens -->
+      <article class="card" aria-label="Siemens Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Siemens_AG_logo.svg" alt="Siemens Logo">
+        <h3>Siemens Servisi</h3>
+        <p>Siemens beyaz eşya ve ankastrelerde periyodik bakım, arıza onarımı ve montaj. Uzun ömür ve performans için uzman servis.</p>
+      </article>
+
+      <!-- Vestel -->
+      <article class="card" aria-label="Vestel Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/81/Vestel_logo.svg" alt="Vestel Logo">
+        <h3>Vestel Servisi</h3>
+        <p>Vestel televizyon, buzdolabı, çamaşır/bulaşık makinesi ve klima cihazlarında hızlı servis; orijinal parça ve temiz işçilik.</p>
+      </article>
+
+      <!-- LG -->
+      <article class="card" aria-label="LG Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/2/20/LG_logo_%282015%29.svg" alt="LG Logo">
+        <h3>LG Servisi</h3>
+        <p>LG ön/üstten yüklemeli çamaşır makineleri, No-Frost buzdolapları ve klimalarda elektronik & mekanik arızalara garantili çözüm.</p>
+      </article>
+
+      <!-- Samsung -->
+      <article class="card" aria-label="Samsung Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung Logo">
+        <h3>Samsung Servisi</h3>
+        <p>Samsung beyaz eşya ve klimalarda sensör, kart, fan ve kompresör kaynaklı hatalara hızlı müdahale. Performans odaklı bakım.</p>
+      </article>
+
+    </div>
+
+    <!-- KOMBI -->
+    <h2 class="section-title">Kombi Servisi</h2>
+    <div class="grid">
+      <article class="card" aria-label="Kombi Servisi">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Boiler_icon.svg" alt="Kombi ikon">
+        <h3>Kombi Bakım & Onarım</h3>
+        <p>Basınç düşmesi, sıcak su dalgalanması, ateşleme hatası, petek ısıtmama ve genleşme tankı sorunlarında yerinde servis. <strong>Vaillant, Demirdöküm, E.C.A., Baymak, Bosch, Ariston</strong> dahil tüm markalar.</p>
+        <p class="note">Yılda bir kez bakım ile %15’e varan yakıt tasarrufu ve daha güvenli kullanım.</p>
+      </article>
+    </div>
+
+    <!-- ILETISIM -->
+    <h2 class="section-title">İletişim</h2>
+    <section class="contact" aria-label="İletişim Bilgileri">
+      <div class="contact-row">
+        <strong>📍 Adres:</strong>
+        <span>Barış, 4546. Sk. 10/A, 35160 Karabağlar/İzmir</span>
+      </div>
+      <div class="contact-row">
+        <strong>📞 Telefon:</strong>
+        <a class="btn" href="tel:+905536904699">0553 690 46 99</a>
+        <a class="btn" href="tel:+905452871357">0545 287 13 57</a>
+      </div>
+      <div class="contact-row">
+        <strong>🕒 Çalışma Saatleri:</strong>
+        <span>Pazartesi – Cumartesi • 08:30 – 19:00</span>
+      </div>
+      <div class="contact-row">
+        <strong>💬 WhatsApp:</strong>
+        <a class="btn" target="_blank" rel="noopener" href="https://wa.me/905452871357?text=Merhaba%20SEKA%20TEKN%C4%B0K%2C%20servis%20talebi%20olacak.">Hemen mesaj gönder</a>
+      </div>
+
+      <div class="map-wrap" aria-label="Google Haritası">
+        <iframe
+          class="map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Bar%C4%B1%C5%9F%2C%204546.%20Sk.%2010%2FA%2C%2035160%20Karaba%C4%9Flar%2F%C4%B0zmir&output=embed">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container inner">
+      <div>© 2025 SEKA TEKNİK — Isıtma ve Soğutma Sistemleri</div>
+      <div>İzmir Geneli Hızlı Servis</div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a
+    class="wa-fab"
+    aria-label="WhatsApp ile SEKA TEKNİK'e yaz"
+    target="_blank" rel="noopener"
+    href="https://wa.me/905452871357?text=Merhaba%20SEKA%20TEKN%C4%B0K%2C%20servis%20talebi%20olacak.">
+    <svg class="wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.28c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.2-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.41.12-.54.12-.12.27-.32.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.46h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.11 2.82.14.18 1.93 2.95 4.69 4.03.66.29 1.17.46 1.58.59.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32zM16.02 3C9.94 3 5 7.95 5 14.02c0 2.43.73 4.69 2 6.56L5 27l6.6-1.93c1.82 1 3.9 1.57 6.1 1.57 6.08 0 11.02-4.94 11.02-11.02C28.72 7.95 22.1 3 16.02 3z"/>
+    </svg>
+    WhatsApp
+    <span class="sr-only">0545 287 13 57</span>
+  </a>
+
 </body>
 </html>
